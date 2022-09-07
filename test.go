@@ -53,7 +53,7 @@ func Map(input *monstachemap.MapperPluginInput) (output *monstachemap.MapperPlug
 
         if err != nil {
           panic(err)
-        }
+        } 
         var titles []bson.M
         if err = titlesData.All(ctx, &titles); err != nil {
             panic(err)
