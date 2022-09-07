@@ -2,7 +2,7 @@
 # Step 1: Build the app
 ####################################################################################################
 
-FROM golang 
+FROM rwynn/monstache-builder-cache-rel6:1.0.7 AS build-app
 
 RUN mkdir /app
 
@@ -12,16 +12,14 @@ COPY . .
 
 RUN go mod download
 
-RUN go get gopkg.in/mgo.v2
-
-RUN go build -buildmode=plugin -o test.so test.go
-
-RUN go build
+RUN make release
 
 ####################################################################################################
 # Step 2: Copy output build file to an alpine image
 ####################################################################################################
 
+FROM rwynn/monstache-alpine:3.15.0
 
-CMD ["./monstache", "-mapper-plugin-path" , "test.so", "-f" ,"config.toml"]
+ENTRYPOINT ["/bin/monstache"]
 
+COPY --from=build-app /app/build/linux-amd64/monstache /bin/monstache
