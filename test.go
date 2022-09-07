@@ -46,7 +46,7 @@ func Map(input *monstachemap.MapperPluginInput) (output *monstachemap.MapperPlug
         //     }
     
         // }
-    
+
         titlesData, err := titlesCollection.Find(ctx, bson.D{{"titleId", bson.D{{"$eq", doc["identifiers"].(map[string]interface{})["titleId"]}}}}) 
         fmt.Println(titlesData)
         fmt.Println(doc["identifiers"].(map[string]interface{})["titleId"])
