@@ -2,8 +2,5 @@ mongo-url = "mongodb+srv://mansimaloo:NPH%401058c@cluster0.ns6weur.mongodb.net"
 # connect to the Elasticsearch REST API at the following node URLs
 elasticsearch-urls = ["http://host.docker.internal:9200/"]
 
-
-
-
-
-
+change-stream-namespaces= ["demo.titles"]
+routing-namespaces = [ "demo.books" ]

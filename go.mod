@@ -4,6 +4,8 @@ require (
 	github.com/BurntSushi/toml v1.0.0
 	github.com/aws/aws-sdk-go v1.43.17
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf
+	github.com/elastic/elasticsearch v8.4.3+incompatible // indirect
+	github.com/elastic/go-elasticsearch/v8 v8.4.0 // indirect
 	github.com/evanphx/json-patch v5.6.0+incompatible
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/go-stack/stack v1.8.1 // indirect
